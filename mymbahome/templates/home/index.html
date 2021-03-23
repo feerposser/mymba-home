@@ -130,6 +130,49 @@
     </section>
     <!-- End About Section  -->
 
+    <!-- ======= About Open Source Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-2 content" data-aos="fade-right">
+            <h3>Somos <b>Open Source</b></h3>
+            <p class="font-italic">
+              Os projetos tecnológicos desenvolvidos são de <b>código fonte aberto</b> para que qualquer pessoa possa <b>estudá-los</b> e também <b>contribuir</b> com os projetos para melhorar as condições de vida de animais de rua.
+            </p>
+            <ul>
+              <li>
+                <i class="bi bi-check-circle"></i> 
+                Você pode clonar todos os projetos e estudá-los a vontade :D
+              </li>
+              <li>
+                <i class="bi bi-check-circle"></i> 
+                Também poderá contribuir com o código, arquitetura, segurança, eletrônica, mecânica e qualquer outro ponto de melhoria no Mymba
+              </li>
+              <li>
+                <i class="bi bi-check-circle"></i> 
+                Contribuindo com o projeto você eterniza sua participação e entra para a lista de contribuidores
+              </li>
+              <li>
+                <i class="bi bi-check-circle"></i> 
+                Entenda como a tecnologia funcona e crie a sua própria versão em casa
+              </li>
+              <li>
+                <i class="bi bi-check-circle"></i> 
+                Cheque os vídeos e tutoriais que criamos para você entender o projeto (:
+              </li>
+            </ul>
+            <a href="levar para uma lista dos repos dev. Usar meu git. Prod usar a org." target="_blank" class="read-more">Repositórios públicos<i class="bi bi-long-arrow-right"></i></a>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-1" data-aos="zoom-in" data-aos-delay="150">
+            <img src="{% static 'assets/img/open-source.png' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- End About Open Source Section  -->
+
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
       <div class="container">
@@ -261,8 +304,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Entre para o time</h2>
-          <p>Aqui não dependemos exclusivamente de auxílio financeiro</p>
+          <h2>Faça parte dessa missão</h2>
+          <p>Existem várias formas de contribuir</p>
         </div>
 
         <div class="row">
@@ -317,71 +360,24 @@
 
         <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
-
+            {%for testemony in testemonials %}
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  {{ testemony.testimony }}
+                  <!-- Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper. -->
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
-                <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
+                <!-- <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt=""> -->
+                <img src="{{testemony.image.url}}" class="testimonial-img" alt="">
+                <!-- <h3>Saul Goodman</h3> -->
+                <h3>{{ testemony.name }}</h3>
+                <!-- <h4>Ceo &amp; Founder</h4> -->
+                <h4> {{ testemony.profession }} </h4>
               </div>
             </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="{% static 'assets/img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="{% static 'assets/img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="{% static 'assets/img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="{% static 'assets/img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div><!-- End testimonial item -->
+            {% endfor %}
 
           </div>
           <div class="swiper-pagination"></div>
