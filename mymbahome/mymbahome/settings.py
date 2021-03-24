@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "home.apps.HomeConfig"
+    "home.apps.HomeConfig",
+    "projects.apps.ProjectsConfig"
 ]
 
 MIDDLEWARE = [
@@ -102,7 +103,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

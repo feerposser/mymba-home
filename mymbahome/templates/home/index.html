@@ -180,12 +180,20 @@
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center">
+            {% if projects %}
+            <span data-purecounter-start="0" data-purecounter-end="{{ projects }}" data-purecounter-duration="2" class="purecounter"></span>
+            {% else %}
             <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            {% endif %}
             <p>Projetos</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
+            {% if contributors %}
+            <span data-purecounter-start="0" data-purecounter-end="{{ contributors }}" data-purecounter-duration="2" class="purecounter"></span>
+            {% else %}
             <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+            {% endif %}
             <p>Protetores</p>
           </div>
 
@@ -193,7 +201,7 @@
             <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
             <p>Animais impactados</p>
           </div>
-
+          
           <div class="col-lg-3 col-6 text-center">
             <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
             <p>Indicador x</p>
