@@ -12,4 +12,6 @@ class ViewHome(View):
 
         return render(request, self.template, {"testemonials": ModelTestimony.objects.all(),
                                                "projects": Projects.objects.count(),
-                                               "contributors": Contributors.objects.count()})
+                                               "contributors": Contributors.objects.count(),
+                                               "actions": Actions.objects.count()})
+
