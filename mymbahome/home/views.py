@@ -12,7 +12,7 @@ class ViewHome(View):
 
     def get(self, request):
         return render(request, self.template, {"testemonials": ModelTestimony.objects.all(),
-                                               "projects": Projects.objects.count(),
+                                               "projects": Projects.objects.all(),
                                                "contributors": Contributors.objects.count(),
                                                "actions": Actions.objects.count()})
 

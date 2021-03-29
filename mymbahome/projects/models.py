@@ -1,5 +1,7 @@
 from django.db import models
 
+import os
+
 
 class ModelContributor(models.Model):
     name = models.CharField(max_length=100)
@@ -18,6 +20,8 @@ class ModelProject(models.Model):
     name = models.CharField(max_length=50, verbose_name="Nome")
     headline = models.TextField(max_length=250, help_text="250 caracteres", verbose_name="Resumo")
     description = models.TextField(verbose_name="Descrição")
+    image = models.ImageField(upload_to="projects", verbose_name="Imagem",
+                              default="")
     contributors = models.ManyToManyField(ModelContributor, blank=True, verbose_name="Contribuintes")
 
     def __str__(self):
