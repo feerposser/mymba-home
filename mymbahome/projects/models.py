@@ -30,7 +30,7 @@ class ModelProject(models.Model):
     class Meta:
         verbose_name = "Projeto"
         verbose_name_plural = "Projetos"
-        ordering = ["name"]
+        # ordering = ["name"]
 
 
 class ModelAction(models.Model):

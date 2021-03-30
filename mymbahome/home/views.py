@@ -12,7 +12,7 @@ class ViewHome(View):
 
     def get(self, request):
         return render(request, self.template, {"testemonials": ModelTestimony.objects.all(),
-                                               "projects": Projects.objects.all(),
+                                               "projects": Projects.objects.all()[:3],
                                                "contributors": Contributors.objects.count(),
                                                "actions": Actions.objects.count()})
 
@@ -27,3 +27,11 @@ class ViewHome(View):
                                  contact.errors)
 
         return HttpResponseRedirect("/")
+
+
+class ViewProjects(View):
+    template = "home/list-main-content.html"
+
+    def get(self, request):
+        return render(request, self.template, {"projects": Projects.objects.all()})
+
