@@ -116,8 +116,8 @@
       <div class="row counters">
 
         <div class="col-lg-3 col-6 text-center">
-          {% if projects %}
-          <span data-purecounter-start="0" data-purecounter-end="{{ projects.count }}" data-purecounter-duration="2"
+          {% if data_activities %}
+          <span data-purecounter-start="0" data-purecounter-end="{{ data_activities.count }}" data-purecounter-duration="2"
             class="purecounter"></span>
           {% else %}
           <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
@@ -138,8 +138,8 @@
         </div>
 
         <div class="col-lg-3 col-6 text-center">
-          {% if actions %}
-          <span data-purecounter-start="0" data-purecounter-end="{{ actions }}" data-purecounter-duration="1"
+          {% if data_activities %}
+          <span data-purecounter-start="0" data-purecounter-end="{{ data_activities.count }}" data-purecounter-duration="1"
             class="purecounter"></span>
           {% else %}
           <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
@@ -347,9 +347,9 @@
 
   <!-- PROJETOS -->
 
-  {% if data_projects %}
+  {% if data_activities %}
 
-  {% include "home/projects.html" with projects=data_projects %}
+  {% include "home/activities.html" with activities=data_activities title="ATIVIDADES" %}
 
   {% endif %}
 

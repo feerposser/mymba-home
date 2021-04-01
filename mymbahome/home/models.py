@@ -19,8 +19,7 @@ class ModelTestimony(models.Model):
     image = models.ImageField(upload_to=os.path.join("home", "testimonials"),
                               blank=True,
                               validators=[validador_image_size],
-                              verbose_name="Imagem"
-                              )
+                              verbose_name="Imagem")
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

@@ -3,7 +3,7 @@ from django.views import View
 from django.contrib import messages
 
 from .models import ModelTestimony
-from projects.models import ModelProject as Projects, ModelAction as Actions, ModelContributor as Contributors
+from projects.models import ModelActivity as Activity, ModelContributor as Contributors
 from .forms import FormContact
 
 
@@ -12,9 +12,8 @@ class ViewHome(View):
 
     def get(self, request):
         return render(request, self.template, {"testemonials": ModelTestimony.objects.all(),
-                                               "data_projects": Projects.objects.all()[:3],
-                                               "contributors": Contributors.objects.count(),
-                                               "actions": Actions.objects.count()})
+                                               "data_activities": Activity.objects.all()[:3],
+                                               "contributors": Contributors.objects.count()})
 
     @staticmethod
     def post(request):
@@ -27,12 +26,3 @@ class ViewHome(View):
                                  contact.errors)
 
         return HttpResponseRedirect("/")
-
-
-class ViewProjects(View):
-    template = "home/list-main-content.html"
-
-    def get(self, request):
-        return render(request, self.template, {
-            "title": "PROJETOS",
-            "data_projects": Projects.objects.all()})

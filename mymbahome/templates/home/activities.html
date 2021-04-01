@@ -7,14 +7,14 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <h2 style="font-size: 50px; color: #17b08e;">Projetos</h2>
+        <h2 style="font-size: 50px; color: #17b08e;">Atividades</h2>
         <p>
           O Mymba mantém projetos que facilitam as ações dos protetores de animais. 
           Estes projetos incluem sistemas de base tecnológica que são <b>open source</b>, 
           ou seja, que possuem código aberto e disponível para que qualquer pessoa baixe, 
           estude e contribua com a melhoria do projeto. Além de ações pontuais que 
           estimulam os protetores a utilizarem a infraestrutura e recursos do Mymba
-          para ajudar animais de rua.<br><hr><b>CONHEÇA NOSSOS PROJETOS:</b>
+          para ajudar animais de rua.<br><hr><b>CONHEÇA NOSSAS ATIVIDADES:</b>
         </p>
       </div>
 
@@ -22,33 +22,31 @@
         <div class="col-lg-12 d-flex justify-content-center">
           <ul id="portfolio-flters">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
+            <li data-filter=".filter-Projeto">Projetos</li>
+            <li data-filter=".filter-Ação">Ações</li>
           </ul>
         </div>
       </div>
 
       <div class="row portfolio-container">
 
-        {% if projects %}
-        {% for project in projects %}
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        {% if activities %}
+        {% for activity in activities %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{ activity.type }}">
             <div class="portfolio-wrap">
 
-              {% if project.image.url %}
-              <img src="{{ project.image.url }}" class="img-fluid" alt="">
+              {% if activity.images %}
+              <img src="{{ activity.images.all.0.image.url }}" class="img-fluid" alt="">
               {% else %}
-              <img src="{% static 'assets/img/no-file-image' %}">
+              <img src="{% static 'assets/img/no-file.jpg' %}">
               {% endif %}
 
               <div class="portfolio-info">
-                <h4>{{ project.name }}</h4>
-                <p>{{ project.headline }}</p>
+                <h4>{{ activity.name }}</h4>
+                <p>{{ activity.headline }}</p>
               </div>
               <div class="portfolio-links">
-                <a href="projects/" title="More Details"><i class="bx bx-link"></i></a>
+                <a href="activities/" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -58,7 +56,7 @@
 
       </div>
 
-      <p class="text-center">Botão para todos os projetos</p>
+      <p class="text-center">Botão para todas as atividades</p>
 
     </div>
   </section>

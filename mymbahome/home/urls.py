@@ -16,9 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import ViewHome, ViewProjects
+from .views import ViewHome
 
 urlpatterns = [
-    path("", ViewHome.as_view()),
-    path("projects/", ViewProjects.as_view())
+    path("", ViewHome.as_view())
 ]

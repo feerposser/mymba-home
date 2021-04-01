@@ -1,8 +1,18 @@
 from django.contrib import admin
 
-from .models import ModelProject as Project, ModelContributor as Contributor, ModelAction as Action
+from .models import ModelActivity, ModelContributor, ModelImageActivity
 
 
-admin.site.register(Project)
-admin.site.register(Contributor)
-admin.site.register(Action)
+class AdminImageActivity(admin.ModelAdmin):
+    def get_model_perms(self, request):
+        """
+        Utilizado para esconder o model na página administrativa
+        :param request:
+        :return:
+        """
+        return {}
+
+
+admin.site.register(ModelActivity)
+admin.site.register(ModelContributor)
+admin.site.register(ModelImageActivity, AdminImageActivity)
