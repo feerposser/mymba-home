@@ -3,7 +3,8 @@ from django.views import View
 from django.contrib import messages
 
 from .models import ModelTestimony
-from projects.models import ModelActivity as Activity, ModelContributor as Contributors
+from projects.models import ModelActivity as Activity, ModelContributor as Contributors, \
+    ModelTypeActivity as TypeActivity
 from .forms import FormContact
 
 
@@ -12,6 +13,7 @@ class ViewHome(View):
 
     def get(self, request):
         return render(request, self.template, {"testemonials": ModelTestimony.objects.all(),
+                                               "types_activities": TypeActivity.objects.all().exclude(type="deleted"),
                                                "data_activities": Activity.objects.all()[:3],
                                                "contributors": Contributors.objects.count()})
 

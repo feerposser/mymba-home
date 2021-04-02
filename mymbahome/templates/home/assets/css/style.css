@@ -598,7 +598,7 @@ section {
   margin-bottom: 0;
 }
 
-.about .content .read-more {
+/*.about .content */.read-more {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -612,11 +612,11 @@ section {
   position: relative;
 }
 
-.about .content .read-more:hover {
+/*.about .content */.read-more:hover {
   background: linear-gradient(180deg, #00e7a7 0%, #a1f7e4 100%);
 }
 
-.about .content .read-more i {
+/*.about .content */.read-more i {
   font-size: 22px;
   position: absolute;
   right: 20px;

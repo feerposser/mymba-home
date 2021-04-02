@@ -18,15 +18,24 @@
         </p>
       </div>
 
+      {% if types_activities %}
+
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
           <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-Projeto">Projetos</li>
-            <li data-filter=".filter-Ação">Ações</li>
+            <li data-filter="*" class="filter-active">Tudo</li>
+
+            {% for type in types_activities %}
+
+            <li data-filter=".filter-{{ type }}">{{ type }}</li>
+
+            {% endfor %}
+            
           </ul>
         </div>
       </div>
+
+      {% endif %}
 
       <div class="row portfolio-container">
 
@@ -46,7 +55,7 @@
                 <p>{{ activity.headline }}</p>
               </div>
               <div class="portfolio-links">
-                <a href="activities/" title="More Details"><i class="bx bx-link"></i></a>
+                <a href="atividades/" title="More Details"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -55,9 +64,14 @@
         {% endif %}
 
       </div>
-
-      <p class="text-center">Botão para todas as atividades</p>
-
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <a href="atividades/" class="justify-content-center text-center read-more">
+            Conheça todas as atividades
+            <i class="bi bi-long-arrow-right"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
   <!-- End Portfolio Section -->
