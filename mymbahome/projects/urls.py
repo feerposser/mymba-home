@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.urls import path
 
-from .views import ViewActivities
+from .views import ViewActivities, ViewActivity
 
 
 urlpatterns = [
-    path('', ViewActivities.as_view())
+    path('', ViewActivities.as_view()),
+    path("<int:id>/<str:slug_name>/", ViewActivity.as_view())
 ]

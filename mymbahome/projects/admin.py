@@ -18,7 +18,11 @@ class AdminTypeActivity(admin.ModelAdmin):
         return {}
 
 
-admin.site.register(ModelActivity)
+class AdminActivity(admin.ModelAdmin):
+    prepopulated_fields = {"slug_name": ("name",)}
+
+
+admin.site.register(ModelActivity, AdminActivity)
 admin.site.register(ModelContributor)
 admin.site.register(ModelImageActivity, AdminImageActivity)
 admin.site.register(ModelTypeActivity, AdminTypeActivity)

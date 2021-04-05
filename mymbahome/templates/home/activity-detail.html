@@ -1,0 +1,84 @@
+
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block title %}activity.name{% endblock %}
+
+{% block main %}
+
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs" style="margin-top: 100px;">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Projetos e ações</h2>
+        <ol>
+          <li><a href="/atividades/">Projetos e ações</a></li>
+          <li>{{ activity.name }}</li>
+        </ol>
+      </div>
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Portfolio Details Section ======= -->
+  <section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-8">
+          <div class="portfolio-details-slider swiper-container">
+            <div class="swiper-wrapper align-items-center">
+
+              {% for image in activity.images.all %}
+
+              <div class="swiper-slide">
+                <img src="{{ image.image.url }}" alt="">
+              </div>
+
+              {% endfor %}
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3>{{ activity.name }}</h3>
+            <ul>
+              <li><strong>Animais impactados</strong>: {{ activity.impacted_animals }}</li>
+              <li><strong>Tipo</strong>: {{ activity.type }}</li>
+              <li><strong>Criado em</strong>: {{ activity.created }}</li>
+              <li><strong>última atualização</strong>: {{ activity.updated }}</li>
+              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+            </ul>
+          </div>
+          <div class="portfolio-description">
+            <h2>Resumo</h2>
+            <p>
+              {{ activity.headline }}
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="row gy-4">
+        <div class="col-lg-8 portfolio-description">
+          <h2>Descrição</h2>
+          <p>
+            {{ activity.description }}
+          </p>
+        </div>
+        
+      </div>
+
+    </div>
+  </section><!-- End Portfolio Details Section -->
+
+</main><!-- End #main -->
+
+{% endblock %}

@@ -61,6 +61,7 @@ class ModelTypeActivity(models.Model):
 
 class ModelActivity(models.Model):
     name = models.CharField(max_length=50, verbose_name="Nome")
+    slug_name = models.SlugField(max_length=100, verbose_name="URL do conteúdo")
     type = models.ForeignKey(ModelTypeActivity,
                              on_delete=models.SET(ModelTypeActivity.get_or_create_default),
                              default=ModelTypeActivity.get_or_create_default)
@@ -70,6 +71,8 @@ class ModelActivity(models.Model):
                                            help_text="Número inteiro")
     images = models.ManyToManyField(ModelImageActivity, blank=False, verbose_name="Imagens")
     contributors = models.ManyToManyField(ModelContributor, blank=True, verbose_name="Contribuintes")
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
