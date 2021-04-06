@@ -90,6 +90,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# cache config - https://docs.djangoproject.com/en/3.1/topics/cache/
+# used to temporary cache IN DATABASE the mumber of helped animals by the project without using
+# third parties packages for create database views.
+# run 'python manage.py createcachetable' to create the cache table
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+        "LOCATION": "cache_table",
+        "TIMEOUT": 604800  # 1 week
+    }
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
