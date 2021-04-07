@@ -3,7 +3,7 @@ from django.views import View
 from django.contrib import messages
 from django.core.cache import cache
 
-from .models import ModelTestimony
+from .models import ModelTestimony, ModelFAQ as FAQ
 from projects.models import ModelActivity as Activity, ModelContributor as Contributors, \
     ModelTypeActivity as TypeActivity
 from .forms import FormContact
@@ -20,7 +20,8 @@ class ViewHome(View):
                                                "types_activities": TypeActivity.objects.all().exclude(type="deleted"),
                                                "data_activities": Activity.objects.all()[:3],
                                                "contributors": Contributors.objects.count(),
-                                               "impacted_animals": impacted_cache_animals})
+                                               "impacted_animals": impacted_cache_animals,
+                                               "questions": FAQ.objects.all()})
 
     @staticmethod
     def post(request):

@@ -45,3 +45,18 @@ class ModelContact(models.Model):
     class Meta:
         verbose_name = "Contato"
         verbose_name_plural = "Contatos"
+
+
+class ModelFAQ(models.Model):
+    question = models.CharField(max_length=200, verbose_name="Pergunta")
+    answer = models.TextField(verbose_name="Resposta")
+    created = models.DateTimeField(auto_now_add=True, editable=False)
+    updated = models.DateTimeField(auto_now=True, editable=False)
+
+    def __str__(self):
+        return self.question
+
+    class Meta:
+        verbose_name = "FAQ"
+        verbose_name_plural = "FAQs"
+        db_table = "faq"
