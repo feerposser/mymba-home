@@ -34,7 +34,7 @@ def activity_deleted_remove_images(sender, instance, **kwargs):
             else:
                 print("Not be able to delete. Image %s exists in some other instance." % image)
     except Exception as e:
-        print("---->", e)
+        print(e)
 
 
 post_save.connect(impacted_animals_updated_cache_update, sender=ModelActivity)

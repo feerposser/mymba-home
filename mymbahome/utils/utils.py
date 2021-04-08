@@ -9,5 +9,5 @@ def get_total_impacted_animals():
                 count += activity.impacted_animals
         return count
     except Exception as e:
-        print("exceeeeption", e)
+        print(e)
         return 0

@@ -55,6 +55,15 @@ class ModelTypeActivity(models.Model):
     def get_or_create_default():
         return ModelTypeActivity.objects.get_or_create(type="deleted")
 
+    def get_verbose_type(self):
+        """
+        Select the verbose type activity instanced.
+        :return: str verbose from choice tuple.
+        """
+        for no_verbose, verbose in self.type_activity:
+            if no_verbose == self.type:
+                return verbose
+
     class Meta:
         db_table = "activity_type"
 

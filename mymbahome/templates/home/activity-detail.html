@@ -51,7 +51,7 @@
             <h3>{{ activity.name }}</h3>
             <ul>
               <li><strong>Animais impactados</strong>: {{ activity.impacted_animals }}</li>
-              <li><strong>Tipo</strong>: {{ activity.type }}</li>
+              <li><strong>Tipo</strong>: {{ activity.type.get_verbose_type }}</li>
               <li><strong>Criado em</strong>: {{ activity.created }}</li>
               <li><strong>última atualização</strong>: {{ activity.updated }}</li>
               <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
