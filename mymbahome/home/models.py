@@ -60,3 +60,17 @@ class ModelFAQ(models.Model):
         verbose_name = "FAQ"
         verbose_name_plural = "FAQs"
         db_table = "faq"
+
+
+class ModelNewsletterAssign(models.Model):
+    email = models.EmailField(max_length=100, unique=True, null=False, blank=False)
+    created = models.DateTimeField(auto_now_add=True, editable=False)
+    updated = models.DateTimeField(auto_now=True, editable=False)
+
+    def __str__(self):
+        return self.email
+
+    class Meta:
+        verbose_name = "Assinatura de Newsletter"
+        verbose_name_plural = "Assinaturas de Newsletter"
+        db_table = "newsletter_assign"

@@ -104,30 +104,33 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Links úteis</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Open source</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Transparência</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Incubadora</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Notícias....</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/atividades/">Atividades</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://github.com/feerposser" target="_blank">Open source</a></li>
+              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Transparência</a></li> -->
+              <li><i class="bx bx-chevron-right"></i> <a href="https://hub.imed.edu.br/" target="_blank">Incubadora</a></li>
+              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Notícias</a></li> -->
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Produtos e serviços</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Ecossistema de protetores</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Mapeamento de comedouros comunitários</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Comedouro inteligente</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Comecouro inteligente comunitário</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Lar temporário</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Clínica veterinária</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Fique por dentro das parada tudo</h4>
             <p>Juro solenemente não enviar nenhum span</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Inscrever">
+            <form action="/newsletter/" method="post">
+              {% csrf_token %}
+              <input type="email" name="email" required><input type="submit" value="Inscrever">
             </form>
           </div>
 
@@ -151,10 +154,10 @@
           </div>
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
           <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="twitter"><i class="bx bxl-github"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-discord"></i></a>
           <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>

@@ -1,12 +1,12 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from django.views import View
 from django.contrib import messages
 from django.core.cache import cache
 
-from .models import ModelTestimony, ModelFAQ as FAQ
+from .models import ModelTestimony, ModelFAQ as FAQ, ModelNewsletterAssign as Newsletter
 from projects.models import ModelActivity as Activity, ModelContributor as Contributors, \
     ModelTypeActivity as TypeActivity
-from .forms import FormContact
+from .forms import FormContact, FormNewsletterAssign
 from utils.utils import get_total_impacted_animals
 
 
@@ -33,4 +33,25 @@ class ViewHome(View):
             messages.add_message(request, messages.ERROR, "Houve um problema ao enviar a mensagem ): \n" +
                                  contact.errors)
 
+        return HttpResponseRedirect("/")
+
+
+class ViewNewsletterAssign(View):
+    """
+    Create an object in NewsletterAssign. The basic to start. In the future a microsservice for newsletter will be
+    necessary to handle all the newsletter stuff.
+    """
+    def post(self, request):
+        try:
+            newsletter_assign = FormNewsletterAssign(request.POST)
+            if newsletter_assign.is_valid():
+                newsletter_assign.save()
+                messages.add_message(request, messages.SUCCESS, "A partir de agora você faz parte do clube! (:")
+            else:
+                messages.add_message(request, messages.ERROR,
+                                     "Houve algum problema ao cadastrar seu email :(\n erro: {}".format(
+                                         newsletter_assign.errors.items()))
+                print(newsletter_assign.errors.items())
+        except Exception as e:
+            print("======", e)
         return HttpResponseRedirect("/")
