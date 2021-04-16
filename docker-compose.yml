@@ -2,14 +2,16 @@ version: '3.8'
 
 services:
     mymbahome:
+        image: mymbahome:mymbahome
         restart: always
         container_name: mymbahome
         build:
             context: .
             dockerfile: Dockerfile
-        # expose: 8000
         ports:
             - 80:8000
         # volumes:
-        #     - .:/mymbahome
+        #     - .:/app
         command: python manage.py runserver 0.0.0.0:8000
+
+# runs on docker-compose up --build -d

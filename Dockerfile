@@ -1,9 +1,11 @@
 FROM python:3.7
 
+LABEL MAINTAINER ="Fernando Posser Pinheiro"
+
 ENV PYTHONBUFFERED 1
 ENV DEBUG 1
 
-WORKDIR /mymbahome
+WORKDIR /app
 
 COPY ./mymbahome .
 COPY requirements.txt .
