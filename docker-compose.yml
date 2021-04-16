@@ -2,16 +2,32 @@ version: '3.8'
 
 services:
     mymbahome:
-        image: mymbahome:mymbahome
+        image: mymbahome:0.1
         restart: always
         container_name: mymbahome
         build:
             context: .
-            dockerfile: Dockerfile
+            dockerfile: ./mymbahome/Dockerfile
         ports:
             - 80:8000
         # volumes:
         #     - .:/app
+        depends_on: 
+            - mysql
         command: python manage.py runserver 0.0.0.0:8000
+
+    mysql:
+        image: mysql:5.7.22
+        restart: always
+        container_name: mysql
+        environment: # environment variables to conect in django settings
+            MYSQL_DATABASE: admin
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: root
+        volumes: # data stored by mysql being mapping to host dir
+            - .mysqldata:/var/lib/mysql
+        ports: 
+            - 3306:3306
 
 # runs on docker-compose up --build -d
