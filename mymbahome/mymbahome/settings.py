@@ -11,9 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '-mo8xvm!c#8gqv^7ap_-rfo_k%^me(@=2%#0!=*y18^pjx2@)o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", False)
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
 
 # Application definition
@@ -44,7 +44,7 @@ ROOT_URLCONF = 'mymbahome.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, "home", "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -64,10 +64,21 @@ WSGI_APPLICATION = 'mymbahome.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv("DATABASE_NAME", "mymbahomedb"),
+        "USER": os.getenv("DATABASE_USER", "root"),
+        "PASSWORD": os.getenv("DATABASE_PASSWORD", "root"),
+        "HOST": os.getenv("DATABASE_HOST", "mysql"),
+        "PORT": os.getenv("DATABASE_PORT", "3306")
     }
 }
 
@@ -119,15 +130,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = 'templates/home/'
-STATIC_ROOT = 'templates/admin/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static_files")
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, STATIC_URL),
+    os.path.join(BASE_DIR, "static"),
 ]
 
 # MEDIA FILES
-
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
 MEDIA_URL = "/media/"

@@ -14,14 +14,15 @@ services:
         #     - .:/app
         depends_on: 
             - mysql
-        command: python manage.py runserver 0.0.0.0:8000
+        # command: python manage.py runserver 0.0.0.0:8000
+        command: gunicorn --bind 0.0.0.0:8000 mymbahome.wsgi
 
     mysql:
         image: mysql:5.7.22
         restart: always
         container_name: mysql
         environment: # environment variables to conect in django settings
-            MYSQL_DATABASE: admin
+            MYSQL_DATABASE: mymbahomedb
             MYSQL_USER: root
             MYSQL_PASSWORD: root
             MYSQL_ROOT_PASSWORD: root
