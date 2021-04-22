@@ -17,7 +17,7 @@ COPY ./mymbahome /app
 # install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 # copy static files to STATIC_ROOT
-CMD "python manage.py collectstatic --noinput"
+RUN python manage.py collectstatic --noinput
 
 
 # after up, need to execute:

@@ -1,5 +1,7 @@
 # mysql data
 .mysqldata
+./mysqldata
+/mysqldata
 
 # pycharm
 .idea

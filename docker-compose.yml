@@ -8,10 +8,12 @@ services:
         build:
             context: .
             dockerfile: ./mymbahome/Dockerfile
-        ports:
-            - 80:8000
-        # volumes:
-        #     - .:/app
+        volumes:
+            - static:/app/static_files
+            - media:/app/media
+            - ./mymbahome:/app
+        expose:
+            - 8000
         depends_on: 
             - mysql
         # command: python manage.py runserver 0.0.0.0:8000
@@ -30,5 +32,24 @@ services:
             - .mysqldata:/var/lib/mysql
         ports: 
             - 3306:3306
+
+    nginx:
+        container_name: nginx
+        image: nginx
+        restart: always
+        build: ./nginx
+        ports: 
+            - 80:80
+        links: 
+            - mymbahome
+        depends_on: 
+            - mymbahome
+        volumes: 
+            - static:/app/static_files
+            - media:/app/media
+
+volumes:
+    media:
+    static:
 
 # runs on docker-compose up --build -d
