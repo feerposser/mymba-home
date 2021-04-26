@@ -3,6 +3,7 @@ FROM python:3.7
 LABEL MAINTAINER = "Fernando Posser Pinheiro"
 
 ENV PYTHONBUFFERED 1
+ENV SECRET_KEY -mo8xvm!c#8gqv^7ap_-rfo_k%^me(@=2%#0!=*y18^pjx2@)o
 ENV DEBUG 0
 ENV DATABASE_NAME mymbahomedb
 ENV DATABASE_USER root
