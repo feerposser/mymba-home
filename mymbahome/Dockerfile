@@ -1,6 +1,6 @@
 FROM python:3.7
 
-LABEL MAINTAINER = "Fernando Posser Pinheiro"
+LABEL MAINTAINER = "Fernando Posser Pinheiro | feerposser"
 
 ENV PYTHONBUFFERED 1
 ENV SECRET_KEY -mo8xvm!c#8gqv^7ap_-rfo_k%^me(@=2%#0!=*y18^pjx2@)o
