@@ -1,8 +1,10 @@
 # mysql data
-.mysqldata
+.mysqldata/
 ./mysqldata
 /mysqldata
 mysqldata
+mysqldata/
+.mysqldata
 
 # pycharm
 .idea
