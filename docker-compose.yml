@@ -17,6 +17,11 @@ services:
         depends_on: 
             - mysql
         command: gunicorn --bind 0.0.0.0:8000 mymbahome.wsgi
+        networks:
+            - feeder
+            - default
+        links:
+            - mysql
 
     mysql:
         image: mysql:5.7.22
@@ -31,6 +36,8 @@ services:
             - .mysqldata:/var/lib/mysql
         ports: 
             - 3306:3306
+        networks:
+            - default
 
     nginx:
         container_name: nginx
@@ -46,9 +53,21 @@ services:
         volumes: 
             - static:/app/static_files
             - media:/app/media
+        networks:
+            - default
 
 volumes:
     media:
     static:
 
-# runs on docker-compose up --build -d
+# default network: ensures connection between home compose
+# feeder network: ensures connection with mymbahome application
+networks:
+    default:
+        name: home
+        driver: bridge
+    feeder:
+        external: true
+        name: feeder
+
+# runs on docker-compose up -d

@@ -5,6 +5,7 @@
 mysqldata
 mysqldata/
 .mysqldata
+/.mysqldata
 
 # pycharm
 .idea
