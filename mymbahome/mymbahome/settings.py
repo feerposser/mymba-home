@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "home.apps.HomeConfig",
-    "projects.apps.ProjectsConfig"
+    "projects.apps.ProjectsConfig",
+    "feeder.apps.FeederConfig"
 ]
 
 MIDDLEWARE = [
@@ -46,7 +47,10 @@ ROOT_URLCONF = 'mymbahome.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "home", "templates")],
+        'DIRS': [
+            os.path.join(BASE_DIR, "home", "templates"),
+            os.path.join(BASE_DIR, "feeder", "templates")
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 
 from .views import ViewHome
+from feeder.views import map
 
 urlpatterns = [
-    path("", ViewHome.as_view())
+    path("", ViewHome.as_view()),
+    path("mapa/", map)
 ]
