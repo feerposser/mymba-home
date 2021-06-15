@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", "-mo8xvm!c#8gqv^7ap_-rfo_k%^me(@=2%#0!=*y18^pjx2@)o")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", False)
+DEBUG = os.getenv("DEBUG", True)
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
@@ -66,24 +66,24 @@ WSGI_APPLICATION = 'mymbahome.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# if DEBUG:
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'NAME': os.getenv("DATABASE_NAME", "mymbahomedb"),
-#             "USER": os.getenv("DATABASE_USER", "root"),
-#             "PASSWORD": os.getenv("DATABASE_PASSWORD", "root"),
-#             "HOST": os.getenv("DATABASE_HOST", "mysql"),
-#             "PORT": os.getenv("DATABASE_PORT", "3306")
-#         }
-#     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.getenv("DATABASE_NAME", "mymbahomedb"),
+            "USER": os.getenv("DATABASE_USER", "root"),
+            "PASSWORD": os.getenv("DATABASE_PASSWORD", "root"),
+            "HOST": os.getenv("DATABASE_HOST", "mysql"),
+            "PORT": os.getenv("DATABASE_PORT", "3306")
+        }
+    }
 
 
 # Password validation
