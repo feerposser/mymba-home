@@ -1,0 +1,70 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Mapa{% endblock %}
+
+{% block link_home %}/#hero{% endblock %}
+{% block link_about %}/#about{% endblock %}
+{% block link_contact %}/#contact{% endblock %}
+{% block link_getstarted %}/#about{% endblock %}
+
+{% block main %}
+
+<main id="main">
+  
+  <section class="inner-page">
+    
+    <div class="container">
+      <br>
+      <h2>Mapeamento comunitário</h2>
+      <p>
+        Example inner page template
+      </p>
+    </div>
+
+    <!-- <div class="container"> -->
+      <div id="map" style="height: 500px; width: 100%;"></div>
+    <!-- </div> -->
+    
+  </section>
+
+</main><!-- End #main -->
+
+<script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: { lat: -28.2403304, lng: -52.3763615 }
+    });
+
+    fetch("http://127.0.0.1:5000/hotspot/").then(function (response) {
+      response.json().then(function (hotspots) {
+        console.log(hotspots)
+        hotspots.map(function (hotspot) {
+          var marker = new google.maps.Marker({
+            position: { 'lat': hotspot.position.latitude, 'lng': hotspot.position.longitude },
+            map: map,
+            title: hotspot.title
+          });
+          var infowindow = new google.maps.InfoWindow({
+            content: `Titulo: <strong>${hotspot.title}</strong><br>
+            Descricao: ${hotspot.description} <br>
+            Patrocinadores: ${hotspot.sponsors} <br>
+            Contribuidores: ${hotspot.contributors}<br>
+            Última pessoa a colaborar: lorem ipsum <br>
+            Ultíma carga: ontem <br>
+            <a href="#">Ir para a página</a>
+            `
+          });
+          marker.addListener('click', function () {
+            infowindow.open(map, marker);
+          });
+        })
+      });
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf4-KOKD_-Ep4JQ6MX24g0zHuWo97lpcE&callback=initMap" async defer></script>
+
+{% endblock %}
