@@ -11,21 +11,97 @@
 
 {% block main %}
 
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+
+  <div class="container-fluid" data-aos="fade-up">
+    <div class="row justify-content-center">
+      <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+        <h1>E se você pudesse enxergar o cenário da proteção dos animais da região?</h1>
+        <h2>No mapeamento comunitário do Mymba você pode. Veja abaixo <i class="bi-file-arrow-down-fill"></i></h2>
+        <div class="row">
+          <div><a href="#map" class="btn-get-started scrollto">Veja o mapa</a></div>
+          <div><a href="#about" class="btn-get-started scrollto">Conheça o mapeamento</a></div>
+        </div>
+        
+      </div>
+      <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
+        <img src="{% static 'home/assets/img/hero-img.png' %}" class="img-fluid animated" alt="">
+      </div>
+    </div>
+  </div>
+
+</section><!-- End Hero -->
+
+<div id="map" style="height: 720px; width: 100%;"></div>
+
 <main id="main">
   
-  <section class="inner-page">
+  <section id="about" class="about">
     
     <div class="container">
-      <br>
-      <h2>Mapeamento comunitário</h2>
-      <p>
-        Example inner page template
-      </p>
-    </div>
 
-    <!-- <div class="container"> -->
-      <div id="map" style="height: 500px; width: 100%;"></div>
-    <!-- </div> -->
+      <div class="row content">
+        <h3 class="text-center"><b>Mapeamento comunitário</b></h3> 
+        <p class="text-center">
+          O Mymba é uma startup de impacto social que não atua apenas no mundo virtual, mas também manda bem no <b class="text-success">mundo real</b>!<br>
+        </p>
+      </div>
+
+      <div class="row mt-5 align-items-center">
+
+        <div class="col-lg-6" data-aos="fade-left">
+          <img src="{% static 'home/assets/img/about.jpg' %}" class="img-fluid" alt="">
+        </div>
+
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+          <h3>O mapeamento auxlia os protetores a entender o ecossistema de sua e outras regiões</h3>
+          <p class="font-italic">
+            Informações sobre diversas ações, projetos e sistemas do <b class="text-success">Mymba</b> são disponibilizadas de forma visual para você entender:
+          </p>
+          <ul>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              O ecossistema da sua região
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              Como você pode, com pouco recursos, ajudar a comunidade protetora de animais
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              Onde depositar um pequeno esforço que se unirá ao esforço de outros para realizar algo grande
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              Onde estão os <a href="#"><b>Alimentadores Comunitários</b></a>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              Onde estão os <a href="#"><b>Alimentadores Inteligentes</b></a>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              Onde ficam os <a href="#"><b>Lares Temporários</b></a>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              Onde estão as <a href="#"><b>Clínicas Veterinárias Parceiras</b></a>
+            </li>
+            <li class="mt-4">
+              <a href="#map" class="read-more align-items-center">ver o mapa</a>
+            </li>
+          </ul>
+          
+          
+        </div>
+
+      </div>
+
+      <br>
+      
+      
+    </div>
     
   </section>
 
@@ -34,8 +110,9 @@
 <script>
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
-      center: { lat: -28.2403304, lng: -52.3763615 }
+      zoom: 13,
+      center: { lat: -28.2403304, lng: -52.3763615 },
+      mapId: '6bd303e1d7078014'
     });
 
     fetch("http://127.0.0.1:5000/hotspot/").then(function (response) {
@@ -48,13 +125,15 @@
             title: hotspot.title
           });
           var infowindow = new google.maps.InfoWindow({
-            content: `Titulo: <strong>${hotspot.title}</strong><br>
-            Descricao: ${hotspot.description} <br>
-            Patrocinadores: ${hotspot.sponsors} <br>
-            Contribuidores: ${hotspot.contributors}<br>
-            Última pessoa a colaborar: lorem ipsum <br>
-            Ultíma carga: ontem <br>
-            <a href="#">Ir para a página</a>
+            content: `<h5 class="text-center text-success"><strong>${hotspot.title}</strong></h5><br>
+            <ul class="content" data-aos="fade">
+              <li>Descricao: ${hotspot.description}</li>
+              <li>Patrocinadores: ${hotspot.sponsors}</li>
+              <li>Contribuidores: ${hotspot.contributors}</li>
+              <li>Última pessoa a colaborar: lorem ipsum</li>
+              <li>Ultíma carga: ontem</li>
+            </ul>
+            <a class="text-center" href="#">Ir para a página</a>
             `
           });
           marker.addListener('click', function () {
