@@ -55,3 +55,7 @@ class ViewNewsletterAssign(View):
         except Exception as e:
             print("======", e)
         return HttpResponseRedirect("/")
+
+
+def open_source(request):
+    return render(request, "home/open-source.html")

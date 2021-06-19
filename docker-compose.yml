@@ -24,13 +24,13 @@ services:
             - mysql
 
     mysql:
-        image: mysql:5.7.22
+        image: mysql:8.0
         restart: always
         container_name: mysql
         environment: # environment variables to conect in django settings
             MYSQL_DATABASE: mymbahomedb
-            MYSQL_USER: root
-            MYSQL_PASSWORD: root
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: admin
             MYSQL_ROOT_PASSWORD: root
         volumes: # data stored by mysql being mapping to host dir
             - .mysqldata:/var/lib/mysql

@@ -26,7 +26,7 @@
         
       </div>
       <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
-        <img src="{% static 'home/assets/img/hero-img.png' %}" class="img-fluid animated" alt="">
+        <img src="{% static 'feeder/assets/img/maps.png' %}" class="img-fluid animated" alt="">
       </div>
     </div>
   </div>
@@ -50,8 +50,8 @@
 
       <div class="row mt-5 align-items-center">
 
-        <div class="col-lg-6" data-aos="fade-left">
-          <img src="{% static 'home/assets/img/about.jpg' %}" class="img-fluid" alt="">
+        <div class="col-lg-6 text-center" data-aos="fade-left">
+          <img style="max-width: 450px;" src="{% static 'feeder/assets/img/apping.jpg' %}" class="img-fluid" alt="">
         </div>
 
         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
@@ -93,7 +93,6 @@
             </li>
           </ul>
           
-          
         </div>
 
       </div>
@@ -122,19 +121,23 @@
           var marker = new google.maps.Marker({
             position: { 'lat': hotspot.position.latitude, 'lng': hotspot.position.longitude },
             map: map,
-            title: hotspot.title
+            title: hotspot.title,
+            icon: '{% static "home/assets/img/favicon2.png" %}'
           });
           var infowindow = new google.maps.InfoWindow({
-            content: `<h5 class="text-center text-success"><strong>${hotspot.title}</strong></h5><br>
-            <ul class="content" data-aos="fade">
-              <li>Descricao: ${hotspot.description}</li>
-              <li>Patrocinadores: ${hotspot.sponsors}</li>
-              <li>Contribuidores: ${hotspot.contributors}</li>
-              <li>Última pessoa a colaborar: lorem ipsum</li>
-              <li>Ultíma carga: ontem</li>
-            </ul>
-            <a class="text-center" href="#">Ir para a página</a>
-            `
+            content: `
+              <div data-aos="fade">
+                <h5 class="text-center text-success"><strong>${hotspot.title}</strong></h5><br>
+                <ul class="content">
+                  <li><b>Descricao</b>: ${hotspot.description}</li>
+                  <li><b>Patrocinadores</b>: ${hotspot.sponsors}</li>
+                  <li><b>Contribuidores</b>: ${hotspot.contributors}</li>
+                  <li><b>Última pessoa a colaborar</b>: lorem ipsum</li>
+                  <li><b>Ultíma carga</b>: ontem</li>
+                </ul>
+                <div class="text-center"><a href="#">Ir para a página</a></div>
+              </div>
+              `
           });
           marker.addListener('click', function () {
             infowindow.open(map, marker);

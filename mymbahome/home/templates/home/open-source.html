@@ -1,0 +1,133 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Open Source{% endblock %}
+
+{% block link_home %}/#hero{% endblock %}
+{% block link_about %}/#about{% endblock %}
+{% block link_contact %}/#contact{% endblock %}
+{% block link_getstarted %}/#about{% endblock %}
+
+{% block main %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+
+    <div class="container-fluid" data-aos="fade-up">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                <h1>Programador(a), o Mymba pode crescer com a sua colaboração!</h1>
+                <h2>Crie, cocrie, aprenda e contribua com o projeto open source</h2>
+                <div class="row">
+                    <div><a href="#main" class="btn-get-started scrollto">Let's get started <i class="bi-github"></i>
+                        </a></div>
+                </div>
+
+            </div>
+            <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
+                <img src="{% static 'open-source/assets/img/github-0.png' %}" class="img-fluid animated" alt="">
+            </div>
+        </div>
+    </div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+
+    <section id="about" class="about">
+
+        <div class="container">
+
+            <div class="row content">
+                <h3 class="text-center mb-5"><b>O que significa ser open source</b>?</h3>
+                <p>
+                    A filosofia de desenvolvimento open source diz respeito ao acesso do código fonte de um programa. Um programa que contenha o código fonte aberto e disponível 
+                    e que possa ser acessado, modificado e estudado de forma gratuita pode ser considerado um software open source. 
+                </p>
+                <p>
+                    Para saber mais, <a target="_BLANK" href="https://pt.wikipedia.org/wiki/Software_de_c%C3%B3digo_aberto">clique aqui e leia sobre este conceito.</a> 
+                    Ou <a target="_BLANK" href="https://www.gnu.org/philosophy/categories.html">clique aqui para saber mais sobre as categorias de código fonte aberto</a>.
+                </p>
+                <p>
+                    Enquanto o Mymba (que ainda está crescendo aos poucos) não descreve a licensa dos softwares desenvolvidos para o projeto, <b>entre em contato através</b> 
+                    das redes sociais ou do formulário do site para solicitar mais Informações sobre a licensa dos programas (:
+                </p>
+            </div>
+
+            <div class="row content mt-5">
+                <h3 class="text-center mb-5">
+                    <b>Mymba Edu</b>
+                </h3>
+                <p>
+                    O impacto social que buscamos não se restringe apenas aos animais, mas também ao <i>homo sapiens</i>.
+                    O <b class="text-success">Mymba Edu</b> é um programa educacional que está intimamente ligado ao própósito pelo qual os projetos de tecnologia
+                    desenvolvidos são open-source. Seu objetivo é transferir conhecimento sobre <b>programação</b>, inovação e empreendedorismo aos indivíduos ligados ao projeto.
+                </p>
+                <p>
+                    O programa educacional com foco em programação aproveita da característica de código aberto dos sistemas para integrar os participantes ao desenvolvimento 
+                    tecnológico dos softwares do projeto.
+                </p>
+            </div>
+
+            <div class="row mt-5 align-items-center">
+
+                <div class="col-lg-6 order-2 text-center" data-aos="fade-left">
+                    <img style="max-width: 450px;" src="{% static 'open-source/assets/img/github-2-1.png' %}" class="img-fluid"
+                        alt="">
+                </div>
+
+                <div class="col-lg-6 pt-4 pt-lg-0 order-1 order-lg-1 content" data-aos="fade-right">
+                    <h3>Tecnologias por trás do Mymba</h3>
+                    <p class="font-italic">
+                        Para construir o ecossistema ideal a fim de atingir os <a href="#">objetivos institucionais</a>, diverssa ferramentas são utilizadas.
+                    </p>
+                    <ul>
+                        <li>
+                            <i class="fas fa-cubes"></i>
+                            Arquitetura de serviços distribuídos (em migração para microsserviços)
+                        </li>
+                        <li>
+                            <i class="fab fa-docker"></i>
+                            Docker e docker compose
+                        </li>
+                        <li>
+                            <i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i><i class="fab fa-bootstrap"></i>
+                            HTML5 + CSS3 + Bootstrap
+                        </li>
+                        <li>
+                            <i class="fas fa-robot"></i><i class="fab fa-raspberry-pi"></i>
+                            Arduino + Raspberry Pi
+                        </li>
+                        <li>
+                            <i class="fas fa-database"></i>
+                            Banco de dados MySQL e Mongodb
+                        </li>
+                        <li>
+                            <i class="fab fa-python"></i><i class="fab fa-js-square"></i>
+                            Linguagem de programação Python e JavaScript
+                        </li>
+                        <li>
+                            <b>E outras que ainda serão utilizadas para o desenvolvimento de novas features</b>
+                        </li>
+                        <hr>
+                        <li class="mt-4 text-center">
+                            <p>Enquanto ainda não desenvolvemos uma página mais sofisticada para falarmos sobre o projeto, que tal nos encontrarmos no GitHub?</p>
+                            <a target="_BLANK" href="https://github.com/Mymba" class="read-more align-items-center">Let's get start <i class="fab fa-github"></i></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <br>
+
+
+        </div>
+
+    </section>
+
+</main><!-- End #main -->
+
+{% endblock %}

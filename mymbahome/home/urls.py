@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import ViewHome
+from .views import ViewHome, open_source
 from feeder.views import map
 
 urlpatterns = [
     path("", ViewHome.as_view()),
-    path("mapa/", map)
+    path("mapa/", map),
+    path("open-source/", open_source)
 ]

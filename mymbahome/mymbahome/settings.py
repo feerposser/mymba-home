@@ -82,8 +82,8 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': os.getenv("DATABASE_NAME", "mymbahomedb"),
-            "USER": os.getenv("DATABASE_USER", "root"),
-            "PASSWORD": os.getenv("DATABASE_PASSWORD", "root"),
+            "USER": os.getenv("DATABASE_USER", "admin"),
+            "PASSWORD": os.getenv("DATABASE_PASSWORD", "admin"),
             "HOST": os.getenv("DATABASE_HOST", "mysql"),
             "PORT": os.getenv("DATABASE_PORT", "3306")
         }
