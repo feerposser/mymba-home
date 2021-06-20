@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #5846f9;
+  border: 6px solid #00e7a7;
   border-top-color: #e7e4fe;
   border-radius: 50%;
   width: 60px;
@@ -268,7 +268,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #5846f9;
+  color: #00e7a7;
 }
 
 .navbar .dropdown:hover > ul {

@@ -62,3 +62,6 @@ def open_source(request):
 
 def ecossystem(request):
     return render(request, "home/ecosystem.html")
+
+def smart_collar(request):
+    return render(request, "home/beallar.html")

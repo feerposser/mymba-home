@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import ViewHome, open_source, ecossystem
+from .views import ViewHome, open_source, ecossystem, smart_collar
 from feeder.views import map
 
 urlpatterns = [
     path("", ViewHome.as_view()),
     path("mapa/", map),
     path("open-source/", open_source),
-    path("ecossistema/", ecossystem)
+    path("ecossistema/", ecossystem),
+    path("coleira-inteligente/", smart_collar)
 ]
