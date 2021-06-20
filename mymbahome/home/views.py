@@ -59,3 +59,6 @@ class ViewNewsletterAssign(View):
 
 def open_source(request):
     return render(request, "home/open-source.html")
+
+def ecossystem(request):
+    return render(request, "home/ecosystem.html")
