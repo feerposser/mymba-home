@@ -77,3 +77,6 @@ def temp_home(request):
 
 def vet(request):
     return render(request, "home/vet.html")
+
+def partners(request):
+    return render(request, "home/partners.html")

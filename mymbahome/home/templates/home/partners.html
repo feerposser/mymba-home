@@ -1,0 +1,95 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block title %}Parceiros{% endblock %}
+
+{% block link_home %}/#hero{% endblock %}
+{% block link_contact %}/#contact{% endblock %}
+
+{% block main %}
+
+<main id="main">
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="section-title">
+                    <h2>
+                        Parceiros
+                    </h2>
+                    <p>
+                        Conheça os parceiros que fazem com que esta missão seja possível
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box  mb-4">
+                        <img style="max-width: 200px; max-height: 200px;" src="{% static 'partners/assets/img/IMED.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box  mb-4">
+                        <img style="max-width: 200px; max-height: 200px;" src="{% static 'partners/assets/img/artemisia.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box  mb-4">
+                        <img style="max-width: 200px; max-height: 200px;" src="{% static 'partners/assets/img/ashoka.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box  mb-4">
+                        <img style="max-width: 200px; max-height: 200px;" src="{% static 'partners/assets/img/gdg.jpeg' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box  mb-4">
+                        <img style="max-width: 200px; max-height: 200px;" src="{% static 'partners/assets/img/ideau.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box  mb-4">
+                        <img style="max-width: 200px; max-height: 200px;" src="{% static 'partners/assets/img/razor.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box  mb-4">
+                        <img style="max-width: 200px; max-height: 200px;" src="{% static 'partners/assets/img/techstars.jpg' %}" alt="">
+                    </div>
+                </div>
+
+                <!-- <div class="col-lg-3 col-md-6">
+                    <div class="info-box  mb-4">
+                        <img style="max-width: 200px; max-height: 200px;" src="{% static 'partners/assets/img/ideau.png' %}" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="info-box  mb-4">
+                        <img style="max-width: 200px; max-height: 200px;" src="{% static 'partners/assets/img/razor.png' %}" alt="">
+                    </div>
+                </div> -->
+            </div>
+
+        </div>
+
+    </section>
+</main>
+
+{% endblock %}
