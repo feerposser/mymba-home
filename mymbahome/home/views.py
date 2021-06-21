@@ -65,3 +65,15 @@ def ecossystem(request):
 
 def smart_collar(request):
     return render(request, "home/beallar.html")
+
+def smart_feeder(request):
+    return render(request, "home/smart-feeder.html")
+
+def edu(request):
+    return render(request, "home/mymba-edu.html")
+
+def temp_home(request):
+    return render(request, "home/temp-home.html")
+
+def vet(request):
+    return render(request, "home/vet.html")

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import ViewHome, open_source, ecossystem, smart_collar
+from .views import ViewHome, open_source, ecossystem, smart_collar, smart_feeder, edu, temp_home, vet
 from feeder.views import map
 
 urlpatterns = [
@@ -24,5 +24,9 @@ urlpatterns = [
     path("mapa/", map),
     path("open-source/", open_source),
     path("ecossistema/", ecossystem),
-    path("coleira-inteligente/", smart_collar)
+    path("coleira-inteligente/", smart_collar),
+    path("comedouro-inteligente/", smart_feeder),
+    path("edu/", edu),
+    path("lar-temporario/", temp_home),
+    path("clinica-veterinaria/", vet)
 ]

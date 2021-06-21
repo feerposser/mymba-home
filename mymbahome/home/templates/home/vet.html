@@ -1,0 +1,36 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block title %}Clínica Veterinária{% endblock %}
+
+{% block link_home %}/#hero{% endblock %}
+{% block link_contact %}/#contact{% endblock %}
+
+{% block main %}
+
+<section id="hero" class="d-flex align-items-center">
+
+    <div class="container-fluid" data-aos="fade-up">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                <h1>Cuide do seu bichano com quem mais cuida do ecossistema de animais de proteção do mundo</h1>
+                <h2>Conheça o sistema de clínicas veterinárias do Mymba</h2>
+            </div>
+            <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
+                <img src="{% static 'vet/assets/img/vet.png' %}" class="img-fluid animated" alt="">
+            </div>
+        </div>
+        <div class="row text-center mt-3">
+            <a style="color: white;" href="#main"><i class="fas fa-angle-double-down fa-10x"></i></a>
+        </div>
+    </div>
+
+</section>
+
+
+<main id="main">
+    
+</main>
+
+{% endblock %}
