@@ -24,10 +24,10 @@ urlpatterns = [
     path("mapa/", map),
     path("open-source/", open_source),
     path("ecossistema/", ecossystem),
-    path("coleira-inteligente/", smart_collar),
-    path("comedouro-inteligente/", smart_feeder),
-    path("edu/", edu),
-    path("lar-temporario/", temp_home),
-    path("clinica-veterinaria/", vet),
-    path("parceiros/", partners)
+    # path("coleira-inteligente/", smart_collar),
+    # path("comedouro-inteligente/", smart_feeder),
+    # path("edu/", edu),
+    # path("lar-temporario/", temp_home),
+    # path("clinica-veterinaria/", vet),
+    # path("parceiros/", partners)
 ]
