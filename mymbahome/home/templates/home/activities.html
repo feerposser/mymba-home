@@ -9,12 +9,9 @@
       <div class="section-title">
         <h2 style="font-size: 50px; color: #17b08e;">Atividades</h2>
         <p>
-          O Mymba mantém projetos que facilitam as ações dos protetores de animais. 
-          Estes projetos incluem sistemas de base tecnológica que são <b>open source</b>, 
-          ou seja, que possuem código aberto e disponível para que qualquer pessoa baixe, 
-          estude e contribua com a melhoria do projeto. Além de ações pontuais que 
-          estimulam os protetores a utilizarem a infraestrutura e recursos do Mymba
-          para ajudar animais de rua.<br><hr><b>CONHEÇA NOSSAS ATIVIDADES:</b>
+          O Mymba mantém projetos e ações que facilitam a atuação dos indivíduos no ecossistema.
+          Estas atividades incluem desde ações de voluntariado, passando por acesso à informação e chegando a
+          sistemas de base tecnológica
         </p>
       </div>
 
@@ -50,13 +47,12 @@
               <img src="{% static 'assets/img/no-file.jpg' %}">
               {% endif %}
 
-              <div class="portfolio-info">
-                <h4>{{ activity.name }}</h4>
-                <p>{{ activity.headline }}</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="/atividades/{{ activity.id }}/{{ activity.slug_name }}/" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
+              <a href="/atividades/{{ activity.id }}/{{ activity.slug_name }}/" class="portfolio-info align-center">
+                <div>
+                  <h4>{{ activity.name }}</h4>
+                  <p>{{ activity.headline }}</p>
+                </div>
+              </a>
             </div>
           </div>
 
