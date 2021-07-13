@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # 'django.contrib.staticfiles',
+    'django.contrib.staticfiles',
     "home.apps.HomeConfig",
     "projects.apps.ProjectsConfig",
     "feeder.apps.FeederConfig"
