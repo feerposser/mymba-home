@@ -327,7 +327,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(28, 47, 65, 0.9);
+  background: rgba(0.0, 90.6, 65.5, 0.8); /*-----------------------------------------------------------------------------------------------------*/
   transition: 0.3s;
   z-index: 999;
 }
@@ -358,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-mobile a {
   padding: 10px 20px;
   font-size: 15px;
-  color: #2c4964;
+  color: #2c4964; /*--------------------------------------------------------------------------------------------------------------------------------*/
 }
 
 .navbar-mobile a:hover:before, .navbar-mobile li:hover > a:before, .navbar-mobile .active:before {
@@ -366,7 +366,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: #5846f9;
+  color: #17b08e; /*--------------------------------------------------------------------------------------*/
 }
 
 .navbar-mobile .getstarted {
@@ -398,7 +398,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
-  color: #5846f9;
+  color: #17b08e; /*--------------------------------------------------------------------------------------------------------------------------------*/
 }
 
 .navbar-mobile .dropdown > .dropdown-active {
@@ -1624,4 +1624,31 @@ section {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
   text-decoration: none;
+}
+
+
+/*--------------------------------------------------------------
+not found
+--------------------------------------------------------------*/
+#not-found .back-home {
+    background: #00e7a7;
+    padding: 10px 12px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
+
+
+/*--------------------------------------------------------------
+about
+--------------------------------------------------------------*/
+#about-header {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, rgba(11.4, 85.9, 69.4, 0.7) 0%, rgba(0.0, 90.6, 65.5, 0.7) 100%);
+  background-size: cover;
+}
+
+#about-header h1 {
+  font-size: large;
 }

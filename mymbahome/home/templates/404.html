@@ -1,0 +1,31 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block title %}Oops{% endblock %}
+
+{% block link_home %}/#hero{% endblock %}
+{% block link_contact %}/#contact{% endblock %}
+
+{% block main %}
+
+<!-- not found page -->
+<section id="not-found" class="pb-0">
+    <div class="container mt-5 mb-5">
+        <h1 class="text-center">Página não encontrada</h1>
+    </div>
+    <div class="container">
+        <div class="row p-0 align-items-center align-middle">
+            <div class="col-sm text-center mb-5">
+                <a href="/" class="back-home">Página principal</a>
+            </div>
+            <div class="col">
+                <img src="{% static 'home/assets/img/404-1.png' %}" alt="Página não encontrada" class="img-fluid"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end not fount page -->
+
+{% endblock %}
