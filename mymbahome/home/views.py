@@ -80,3 +80,6 @@ def vet(request):
 
 def partners(request):
     return render(request, "home/partners.html")
+
+def about(request):
+    return render(request, "home/about.html")
