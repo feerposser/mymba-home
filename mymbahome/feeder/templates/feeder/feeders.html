@@ -20,7 +20,6 @@
         <h1>E se você pudesse enxergar o cenário da proteção dos animais da região?</h1>
         <h2>No mapeamento comunitário do Mymba você pode. Veja abaixo <i class="bi-file-arrow-down-fill"></i></h2>
         <div class="row">
-          <div><a href="#map" class="btn-get-started scrollto">Veja o mapa</a></div>
           <div><a href="#about" class="btn-get-started scrollto">Conheça o mapeamento</a></div>
         </div>
         
@@ -40,7 +39,7 @@
     <div class="container">
 
       <div class="row content">
-        <h3 class="text-center"><b>Mapeamento comunitário</b></h3> 
+        <h2 class="text-center"><b>Mapeamento comunitário</b></h2> 
         <p class="text-center">
           O Mymba é uma startup de impacto social que não atua apenas no mundo virtual, mas também manda bem no <b class="text-success">mundo real</b>!<br>
         </p>
@@ -82,67 +81,26 @@
               <i class="bi bi-check-circle-fill"></i>
               Futuras ações e projetos do Mymba
             </li>
-            <li class="mt-4">
-              <a href="#map" class="read-more align-items-center">ver o mapa</a>
-            </li>
           </ul>
-          
         </div>
-
       </div>
-
-      <br>
-      
-      
     </div>
     
   </section>
 
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Aonde está o mapeamento?</h2>
+        <p>
+          O sistema de mapeamento está sendo desenvolvido e entrará em funcionamento em breve junto com outras funcionalidades (: <br>
+          Você pode acompanhar o desenvolvimento <a href="/open-source/">clicando aqui.</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
 </main><!-- End #main -->
 
-<div id="map" style="height: 720px; width: 100%;"></div>
-
-<script>
-  function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 13,
-      center: { lat: -28.2403304, lng: -52.3763615 },
-      mapId: '6bd303e1d7078014'
-    });
-
-    fetch("http://127.0.0.1:5000/hotspot/").then(function (response) {
-      response.json().then(function (hotspots) {
-        console.log(hotspots)
-        hotspots.map(function (hotspot) {
-          var marker = new google.maps.Marker({
-            position: { 'lat': hotspot.position.latitude, 'lng': hotspot.position.longitude },
-            map: map,
-            title: hotspot.title,
-            icon: '{% static "home/assets/img/favicon2.png" %}'
-          });
-          var infowindow = new google.maps.InfoWindow({
-            content: `
-              <div data-aos="fade">
-                <h5 class="text-center text-success"><strong>${hotspot.title}</strong></h5><br>
-                <ul class="content">
-                  <li><b>Descricao</b>: ${hotspot.description}</li>
-                  <li><b>Patrocinadores</b>: ${hotspot.sponsors}</li>
-                  <li><b>Contribuidores</b>: ${hotspot.contributors}</li>
-                  <li><b>Última pessoa a colaborar</b>: lorem ipsum</li>
-                  <li><b>Ultíma carga</b>: ontem</li>
-                </ul>
-                <div class="text-center"><a href="#">Ir para a página</a></div>
-              </div>
-              `
-          });
-          marker.addListener('click', function () {
-            infowindow.open(map, marker);
-          });
-        })
-      });
-    });
-  }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf4-KOKD_-Ep4JQ6MX24g0zHuWo97lpcE&callback=initMap" async defer></script>
 
 {% endblock %}
