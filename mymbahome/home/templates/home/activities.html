@@ -1,7 +1,5 @@
 {% load static %}
 
-
-
 <!-- ======= Portfolio Section ======= -->
 <section id="portfolio" class="portfolio">
     <div class="container" data-aos="fade-up">
@@ -24,7 +22,7 @@
 
             {% for type in types_activities %}
 
-            <li data-filter=".filter-{{ type }}">{{ type }}</li>
+            <li data-filter=".filter-{{ type.get_verbose_type }}">{{ type.get_verbose_type }}</li>
 
             {% endfor %}
             
@@ -38,7 +36,7 @@
 
         {% if activities %}
         {% for activity in activities %}
-          <div class="col-lg-4 col-md-6 portfolio-item filter-{{ activity.type }}">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{ activity.type.get_verbose_type }}">
             <div class="portfolio-wrap">
 
               {% if activity.images %}
