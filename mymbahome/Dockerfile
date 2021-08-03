@@ -7,7 +7,7 @@ ENV SECRET_KEY -mo8xvm!c#8gqv^7ap_-rfo_k%^me(@=2%#0!=*y18^pjx2@)o
 ENV DEBUG False
 ENV DATABASE_NAME mymbahomedb
 ENV DATABASE_USER admin
-ENV DATABASE_PASSWORD admin
+ENV DATABASE_PASSWORD abc123321
 ENV DATABASE_HOST mysql
 ENV DATABASE_PORT 3306
 
@@ -26,13 +26,13 @@ RUN python manage.py collectstatic --noinput
 # and run commands bellow
 
 # create key value cache table
-#python manage.py createcachetable
+# python manage.py createcachetable
 
 # create migrations files
 # python manage.py makemigrations
 
 # makemigrations that affects database
-# python manage.py migrate"
+# python manage.py migrate
 
 # create first super user
 # python manage.py createsuperuser
