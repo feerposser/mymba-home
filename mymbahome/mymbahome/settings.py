@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # to generate a new secret key: from django.core.management.utils import get_random_secret_key
 # get secret key by Dockerfile or a dev secret key by default
-SECRET_KEY = os.getenv("SECRET_KEY", "-mo8xvm!c#8gqv^7ap_-rfo_k%^me(@=2%#0!=*y18^pjx2@)o")
+SECRET_KEY = os.getenv("SECRET_KEY", "s9#zs3xknnf9fhkfvfc=#2^8)(&b+-1692+j*-k7pwtuhl6+-a")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.getenv("DEBUG", False)
