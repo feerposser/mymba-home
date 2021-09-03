@@ -10,11 +10,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # to generate a new secret key: from django.core.management.utils import get_random_secret_key
 # get secret key by Dockerfile or a dev secret key by default
-SECRET_KEY = os.getenv("SECRET_KEY", "s9#zs3xknnf9fhkfvfc=#2^8)(&b+-1692+j*-k7pwtuhl6+-a")
+SECRET_KEY = os.getenv("SECRET_KEY", "-mo8xvm!c#8gqv^7ap_-rfo_k%^me(@=2%#0!=*y18^pjx2@)o")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.getenv("DEBUG", False)
-DEBUG = True
+DEBUG = bool(int(os.getenv("DEBUG", True)))
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
 
@@ -72,13 +72,15 @@ WSGI_APPLICATION = 'mymbahome.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 # if DEBUG:
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     print("DEBUG --> True")
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
 #     }
-# }
 # else:
+print("DEBUG --> False")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',

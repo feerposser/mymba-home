@@ -24,11 +24,11 @@ services:
         image: mysql:8.0
         restart: always
         container_name: mysql
-        environment: # environment variables to conect in django settings
+        environment:    
             MYSQL_DATABASE: mymbahomedb
             MYSQL_USER: admin
             MYSQL_PASSWORD: dz"F7NbGJwhnKBqJ7t]&[`Y>.685GC}fzsLT,kQ;}@zf@KUj)L
-            MYSQL_ROOT_PASSWORD: bY25(x+A@@YukS">)rcgxh#Va(p~6ukFG=&R5n-+}c;zQL4}%
+            MYSQL_ROOT_PASSWORD: bY25(x+A@@YukS>)rcgxh#Va(p~6ukFG=&R5n-+}c;zQL4}%
         volumes: # data stored by mysql being mapping to host dir
             - .mysqldata:/var/lib/mysql
         networks:
@@ -57,10 +57,7 @@ volumes:
     media:
     static:
 
-# default network: ensures connection between home compose
 networks:
     default:
         name: home
         driver: bridge
-
-# runs on docker-compose up -d
