@@ -3,11 +3,6 @@ FROM python:3.7
 LABEL MAINTAINER = "Fernando Posser Pinheiro | feerposser"
 
 ENV PYTHONBUFFERED 1
-ENV SECRET_KEY s9#zs3xknnf9fhkfvfc=#2^8)(&b+-1692+j*-k7pwtuhl6+-a
-ENV DEBUG 1
-ENV DATABASE_NAME mymbahomedb
-ENV DATABASE_USER admin
-ENV DATABASE_PASSWORD 'dz"F7NbGJwhnKBqJ7t]&[`Y>.685GC}fzsLT,kQ;}@zf@KUj)L'
 ENV DATABASE_HOST mysql
 ENV DATABASE_PORT 3306
 

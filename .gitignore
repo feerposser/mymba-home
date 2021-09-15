@@ -1,3 +1,6 @@
+# docker-compose environment variables for production
+/environment/prod.*
+
 # mysql data
 .mysqldata/
 ./mysqldata

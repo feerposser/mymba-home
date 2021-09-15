@@ -5,6 +5,8 @@ services:
         image: mymbahome:0.1
         restart: always
         container_name: mymbahome
+        env_file: 
+            - ./environment/dev.mymbahome.env
         build:
             context: .
             dockerfile: ./mymbahome/Dockerfile
@@ -24,11 +26,8 @@ services:
         image: mysql:8.0
         restart: always
         container_name: mysql
-        environment:    
-            MYSQL_DATABASE: mymbahomedb
-            MYSQL_USER: admin
-            MYSQL_PASSWORD: dz"F7NbGJwhnKBqJ7t]&[`Y>.685GC}fzsLT,kQ;}@zf@KUj)L
-            MYSQL_ROOT_PASSWORD: bY25(x+A@@YukS>)rcgxh#Va(p~6ukFG=&R5n-+}c;zQL4}%
+        env_file: 
+            - ./environment/dev.mysql.env
         volumes: # data stored by mysql being mapping to host dir
             - .mysqldata:/var/lib/mysql
         networks:
