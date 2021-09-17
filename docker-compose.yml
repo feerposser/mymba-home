@@ -30,7 +30,7 @@ services:
         env_file: 
             - ./environment/dev.mysql.env
             - ./environment/dev.databaseaccess.env
-        volumes: # data stored by mysql being mapping to host dir
+        volumes:
             - .mysqldata:/var/lib/mysql
         networks:
             - default
@@ -62,3 +62,7 @@ networks:
     default:
         name: home
         driver: bridge
+
+# Obs
+# docker-compose up -d -> for run compose
+# change 'env_file' services level config for production enrivonment files

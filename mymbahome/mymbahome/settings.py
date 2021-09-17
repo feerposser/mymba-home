@@ -80,13 +80,13 @@ WSGI_APPLICATION = 'mymbahome.wsgi.application'
 #         }
 #     }
 # else:
-print("DEBUG --> False")
+print("PASSWORD -->", os.getenv("DATABASE_PASSWORD"))
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv("DATABASE_NAME", "mymbahomedb"),
-        "USER": os.getenv("DATABASE_USER", "admin"),
-        "PASSWORD": os.getenv("DATABASE_PASSWORD", "abc123321"),
+        'NAME': os.getenv("MYSQL_DATABASE", "mymbahomedb"),
+        "USER": os.getenv("MYSQL_USER", "admin"),
+        "PASSWORD": os.getenv("MYSQL_PASSWORD", "abc123321"),
         "HOST": os.getenv("DATABASE_HOST", "localhost"),
         "PORT": os.getenv("DATABASE_PORT", "3306")
     }
