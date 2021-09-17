@@ -7,6 +7,7 @@ services:
         container_name: mymbahome
         env_file: 
             - ./environment/dev.mymbahome.env
+            - ./environment/dev.databaseaccess.env
         build:
             context: .
             dockerfile: ./mymbahome/Dockerfile
@@ -28,6 +29,7 @@ services:
         container_name: mysql
         env_file: 
             - ./environment/dev.mysql.env
+            - ./environment/dev.databaseaccess.env
         volumes: # data stored by mysql being mapping to host dir
             - .mysqldata:/var/lib/mysql
         networks:
