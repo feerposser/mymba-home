@@ -6,8 +6,8 @@ services:
         restart: always
         container_name: mymbahome
         env_file: 
-            - ./environment/dev.mymbahome.env
-            - ./environment/dev.databaseaccess.env
+            - ./environment/prod.mymbahome.env
+            - ./environment/prod.databaseaccess.env
         build:
             context: .
             dockerfile: ./mymbahome/Dockerfile
@@ -28,8 +28,8 @@ services:
         restart: always
         container_name: mysql
         env_file: 
-            - ./environment/dev.mysql.env
-            - ./environment/dev.databaseaccess.env
+            - ./environment/prod.mysql.env
+            - ./environment/prod.databaseaccess.env
         volumes:
             - .mysqldata:/var/lib/mysql
         networks:
