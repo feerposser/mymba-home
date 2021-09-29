@@ -6,8 +6,8 @@ services:
         restart: always
         container_name: mymbahome
         env_file:
-            - ./environment/prod.mymbahome.env
-            - ./environment/prod.databaseaccess.env
+            - ./environment/env.mymbahome.env
+            - ./environment/env.databaseaccess.env
         environment:
             - VIRTUAL_HOST=localhost
             - VIRTUAL_PORT=8000
@@ -33,8 +33,8 @@ services:
         restart: always
         container_name: mysql
         env_file:
-            - ./environment/prod.mysql.env
-            - ./environment/prod.databaseaccess.env
+            - ./environment/env.mysql.env
+            - ./environment/env.databaseaccess.env
         volumes:
             - .mysqldata:/var/lib/mysql
         networks:
