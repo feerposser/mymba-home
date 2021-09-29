@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginxproxy/nginx-proxy:latest
 
 # RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/nginx.conf
+# COPY nginx.conf /etc/nginx/nginx.conf

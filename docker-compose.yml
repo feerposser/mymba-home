@@ -5,9 +5,14 @@ services:
         image: mymbahome:0.1
         restart: always
         container_name: mymbahome
-        env_file: 
+        env_file:
             - ./environment/prod.mymbahome.env
             - ./environment/prod.databaseaccess.env
+        environment:
+            - VIRTUAL_HOST=localhost
+            - VIRTUAL_PORT=8000
+        expose:
+            - "8000"
         build:
             context: .
             dockerfile: ./mymbahome/Dockerfile
@@ -15,7 +20,7 @@ services:
             - static:/app/static_files
             - media:/app/media
             - ./mymbahome:/app
-        depends_on: 
+        depends_on:
             - mysql
         command: gunicorn --bind 0.0.0.0:8000 mymbahome.wsgi
         networks:
@@ -27,30 +32,27 @@ services:
         image: mysql:8.0
         restart: always
         container_name: mysql
-        env_file: 
+        env_file:
             - ./environment/prod.mysql.env
             - ./environment/prod.databaseaccess.env
-        volumes:
-            - .mysqldata:/var/lib/mysql
+        #volumes:
+        #    - .mysqldata:/var/lib/mysql
         networks:
             - default
         command: --default-authentication-plugin=mysql_native_password
-        # command: --default-auth=mysql_native_password
 
     nginx:
         container_name: nginx
-        image: nginx
         restart: always
         build: ./nginx
-        ports: 
+        ports:
             - 80:80
-        links: 
+        depends_on:
             - mymbahome
-        depends_on: 
-            - mymbahome
-        volumes: 
+        volumes:
             - static:/app/static_files
             - media:/app/media
+            - /var/run/docker.sock:/tmp/docker.sock:ro
         networks:
             - default
 
