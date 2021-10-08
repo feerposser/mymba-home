@@ -8,9 +8,9 @@ services:
         env_file:
             - ./environment/dev.mymbahome.env
             - ./environment/dev.databaseaccess.env
-        environment:
-            - VIRTUAL_HOST=localhost
-            - VIRTUAL_PORT=8000
+        # environment:
+        #     - VIRTUAL_HOST=localhost
+        #     - VIRTUAL_PORT=8000
         expose:
             - "8000"
         build:
@@ -41,20 +41,40 @@ services:
             - default
         command: --default-authentication-plugin=mysql_native_password
 
-    nginx:
-        container_name: nginx
+    nginx-proxy-manager:
+        image: jc21/nginx-proxy-manager
         restart: always
-        build: ./nginx
-        ports:
-            - 80:80
         depends_on:
             - mymbahome
+        ports:
+            - 80:80
+            - 81:81
+            - 443:443
+        environment:
+            DB_MYSQL_HOST: "nginx-proxy-manager-db"
+            DB_MYSQL_PORT: 3306
+            DB_MYSQL_USER: "admin"
+            DB_MYSQL_PASSWORD: "admin"
+            DB_MYSQL_NAME: "admin"
         volumes:
+            - ./data:/data
+            - ./letsencrypt:/etc/letsencrypt
             - static:/app/static_files
             - media:/app/media
-            - /var/run/docker.sock:/tmp/docker.sock:ro
+        links:
+            - mymbahome
         networks:
             - default
+  
+    nginx-proxy-manager-db:
+        image: jc21/mariadb-aria:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: "admin"
+            MYSQL_DATABASE: "admin"
+            MYSQL_USER: "admin"
+            MYSQL_PASSWORD: "admin"
+        volumes:
+            - ./data/mysql:/var/lib/mysql
 
 volumes:
     media:
