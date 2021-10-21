@@ -38,8 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: black;
-  /* background: #5846f9; */
+  background: #7A26EC;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -53,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  background: #00e7a7;
+  background: #8952CC;
   color: #fff;
 }
 
@@ -81,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #00e7a7;
+  border: 6px solid #11E3E0;
   border-top-color: #e7e4fe;
   border-radius: 50%;
   width: 60px;
@@ -124,11 +123,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
-  background: rgba(0.0, 90.6, 65.5, 0.8);
+  background: rgba(17, 227, 224, 0.8);
 }
 
 #header.header-scrolled, #header.header-inner-pages {
-  background: rgba(0.0, 90.6, 65.5, 0.8);
+  background: rgba(12, 179, 176, 0.8);
   padding: 12px 0;
 }
 
@@ -260,7 +259,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar .dropdown ul a {
   padding: 10px 20px;
   font-size: 14px;
-  color: #2c4964;
+  color: #11E3E0;
 }
 
 .navbar .dropdown ul a i {
@@ -268,7 +267,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #00e7a7;
+  color: #0CB3B0;
 }
 
 .navbar .dropdown:hover > ul {
@@ -327,7 +326,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(0.0, 90.6, 65.5, 0.8); /*-----------------------------------------------------------------------------------------------------*/
+  background: rgba(17, 227, 224, 0.8); /*-----------------------------------------------------------------------------------------------------*/
   transition: 0.3s;
   z-index: 999;
 }
@@ -358,7 +357,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-mobile a {
   padding: 10px 20px;
   font-size: 15px;
-  color: #2c4964; /*--------------------------------------------------------------------------------------------------------------------------------*/
+  color: #11E3E0; /*--------------------------------------------------------------------------------------------------------------------------------*/
 }
 
 .navbar-mobile a:hover:before, .navbar-mobile li:hover > a:before, .navbar-mobile .active:before {
@@ -366,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: #17b08e; /*--------------------------------------------------------------------------------------*/
+  color: #0CB3B0; /*--------------------------------------------------------------------------------------*/
 }
 
 .navbar-mobile .getstarted {
@@ -398,7 +397,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
-  color: #17b08e; /*--------------------------------------------------------------------------------------------------------------------------------*/
+  color: #0CB3B0; /*--------------------------------------------------------------------------------------------------------------------------------*/
 }
 
 .navbar-mobile .dropdown > .dropdown-active {
@@ -411,7 +410,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(45deg, rgba(11.4, 85.9, 69.4, 0.7) 0%, rgba(0.0, 90.6, 65.5, 0.7) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+  background: linear-gradient(45deg, rgba(17, 227, 224, 0.7) 0%, rgba(137, 82, 204, 0.7) 100%), url("../img/hero-bg.jpg") center center no-repeat;
   background-size: cover;
 }
 
@@ -576,7 +575,7 @@ section {
 .about .content h3 {
   font-weight: 600;
   font-size: 32px;
-  color: #17b08e;
+  color: #7A26EC;
 }
 
 .about .content ul {
@@ -591,14 +590,14 @@ section {
 .about .content ul i {
   font-size: 20px;
   padding-right: 4px;
-  color: #17b08e;
+  color: #8952CC;
 }
 
 .about .content p:last-child {
   margin-bottom: 0;
 }
 
-/*.about .content */.read-more {
+.about .content .read-more {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -608,15 +607,16 @@ section {
   border-radius: 5px;
   transition: 0.5s;
   color: #fff;
-  background: linear-gradient(45deg, #00e7a7 0%, #a1f7e4 100%);
+  background: linear-gradient(45deg, rgba(122, 38, 236, 0.6) 0%, rgba(137, 82, 204, 0.8) 100%);
   position: relative;
 }
 
-/*.about .content */.read-more:hover {
-  background: linear-gradient(180deg, #00e7a7 0%, #a1f7e4 100%);
+.about .content .read-more:hover {
+  background: #7A26EC; /*linear-gradient(45deg, rgba(137, 82, 204, 1) 0%, rgba(122, 38, 236, 1) 100%);*/
+  color: white;
 }
 
-/*.about .content */.read-more i {
+.about .content .read-more i {
   font-size: 22px;
   position: absolute;
   right: 20px;
@@ -627,7 +627,7 @@ section {
 # Counts
 --------------------------------------------------------------*/
 .counts {
-  background: linear-gradient(90deg, rgba(0.0, 90.6, 65.5, 0.8) 0%, rgba(26.7, 88.2, 74.9, 0.7) 100%), url("../img/counts-bg2.png") center center no-repeat;
+  background: linear-gradient(75deg, rgba(17, 227, 224, 0.8) 0%, rgba(137, 82, 204, 0.6) 100%), url("../img/counts-bg2.png") center center no-repeat;
   padding: 80px 0 60px 0;
 }
 
@@ -1368,7 +1368,7 @@ section {
 }
 
 .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
-  border-color: #00e7a7;
+  border-color: #11E3E0;
 }
 
 .contact .php-email-form input {
@@ -1380,7 +1380,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"] {
-  background: #1ddbb1;
+  background: #FF0085;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1389,7 +1389,7 @@ section {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
-  background: #00e7a7;
+  background: #8952CC;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1469,7 +1469,7 @@ section {
 #footer {
   color: #fff;
   font-size: 14px;
-  background: linear-gradient(45deg, rgba(0.0, 90.6, 65.5, 0.9) 0%, rgba(9.0, 69.0, 55.7, 0.9) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+  background: linear-gradient(45deg, rgba(17, 227, 224, 0.7) 0%, rgba(137, 82, 204, 0.6) 100%), url("../img/hero-bg.jpg") center center no-repeat;
   background-size: cover;
 }
 
@@ -1580,15 +1580,15 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #44e1bf;
+  background: #FF0085;
   color: #fff;
-  transition: 0.3s;
+  transition: 0.4s;
   border-radius: 0 5px 5px 0;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 #footer .footer-newsletter form input[type="submit"]:hover {
-  background: #00e7a7;
+  background: #8952CC;
 }
 
 #footer .copyright-wrap {
@@ -1608,7 +1608,7 @@ section {
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.4);
   color: #fff;
   line-height: 1;
   padding: 8px 0;

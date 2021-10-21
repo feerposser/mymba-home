@@ -71,17 +71,8 @@ WSGI_APPLICATION = 'mymbahome.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# if DEBUG:
-#     print("DEBUG --> True")
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
-# else:
-print("PASSWORD -->", os.getenv("DATABASE_PASSWORD"))
-DATABASES = {
+if not DEBUG:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.getenv("MYSQL_DATABASE", "mymbahomedb"),
@@ -91,6 +82,14 @@ DATABASES = {
         "PORT": os.getenv("DATABASE_PORT", "3306")
     }
 }
+else:
+    print("DEBUG -->", DEBUG)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 # Password validation

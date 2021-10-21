@@ -144,17 +144,7 @@
           <p>Ações realizadas</p>
         </div>
 
-<!--        <div class="col-sm text-center">-->
-<!--          {% if impacted_animals %}-->
-<!--          <span data-purecounter-start="0" data-purecounter-end="{{ impacted_animals }}" data-purecounter-duration="1" class="purecounter"></span>-->
-<!--          {% else %}-->
-<!--          <span data-purecounter-start="0" data-purecounter-end="&#45;&#45;" data-purecounter-duration="1" class="purecounter"></span>-->
-<!--          {% endif %}-->
-<!--          <p>Animais impactados</p>-->
-<!--        </div>-->
-
       </div>
-
     </div>
   </section>
   <!-- End Counts Section -->
@@ -203,7 +193,7 @@
             </p>
           </div>
         </div>
-        <div class="image col-lg-6 order-1 order-lg-2 " data-aos="zoom-in" data-aos-delay="100">
+        <div class="text-center image col-lg-6 order-1 order-lg-2 " data-aos="zoom-in" data-aos-delay="100">
           <img src="{% static 'home/assets/img/features.png' %}" alt="" class="img-fluid">
         </div>
       </div>
@@ -211,6 +201,7 @@
     </div>
   </section><!-- End Features Section -->
 
+  {% if testemonials %}
   <!-- ======= Testimonials Section ======= -->
   <section id="testimonials" class="testimonials section-bg">
     <div class="container" data-aos="fade-up">
@@ -250,6 +241,8 @@
     </div>
   </section><!-- End Testimonials Section -->
 
+  {% endif %}
+
   <!-- PROJETOS -->
 
   {% if data_activities %}
@@ -260,6 +253,7 @@
 
   <!-- FIM PROJETOS -->
 
+  {% if questions %}
   <!-- ======= Frequently Asked Questions Section ======= -->
   <section id="faq" class="faq">
     <div class="container" data-aos="fade-up">
@@ -308,6 +302,8 @@
     </div>
     
   </section><!-- End Frequently Asked Questions Section -->
+
+  {% endif %}
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact section-bg">
