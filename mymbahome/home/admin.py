@@ -3,7 +3,7 @@ from .models import ModelTestimony, ModelContact, ModelFAQ, ModelNewsletterAssig
 
 
 class AdminContact(admin.ModelAdmin):
-    readonly_fields = ("name", "email", "subject", "message", "created", "updated",)
+    readonly_fields = ("name", "email", "office", "created", "updated",)
 
 
 class AdminNewsletterAssign(admin.ModelAdmin):

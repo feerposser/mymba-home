@@ -34,8 +34,7 @@ class ModelTestimony(models.Model):
 class ModelContact(models.Model):
     name = models.CharField(max_length=250, verbose_name="Nome")
     email = models.EmailField(verbose_name="Email")
-    subject = models.CharField(max_length=250, verbose_name="Assunto")
-    message = models.TextField(verbose_name="Mensagem")
+    office = models.TextField(max_length=50, verbose_name="Ocupação")
     created = models.DateTimeField(auto_now_add=True, editable=False)
     updated = models.DateTimeField(auto_now=True, editable=False)
 

@@ -6,7 +6,7 @@ from .models import ModelContact, ModelNewsletterAssign
 class FormContact(forms.ModelForm):
     class Meta:
         model = ModelContact
-        fields = ("name", "email", "subject", "message",)
+        fields = ("name", "email", "office",)
 
 
 class FormNewsletterAssign(forms.ModelForm):
