@@ -2,12 +2,10 @@
 
 {% load static %}
 
-
 {% block main %}
 
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
-
   <div class="container-fluid" data-aos="fade-up">
     <div class="row justify-content-center">
       <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
@@ -85,10 +83,10 @@
               Visibilidade ao ecossistema de proteção animal através da parceria com empresas do setor privado
             </li>
           </ul>
-          <a href="#features" class="read-more text-center">Saiba mais</a>
+          <a style="background: #FF0085!important;" href="#contact" class="read-more text-center">Gostei!</a>
         </div>
         <div class="col-lg-6 order-1 order-lg-1" data-aos="zoom-in" data-aos-delay="150">
-          <img src="{% static 'home/assets/img/protection.jpeg' %}" class="img-fluid" alt="">
+          <img src="{% static 'home/assets/img/protection.png' %}" class="img-fluid" alt="">
         </div>
       </div>
 
@@ -191,6 +189,18 @@
 
     </div>
   </section><!-- End Features Section -->
+
+
+  <!-- ======= call to action Section ======= -->
+  <section id="counts" class="counts">
+    <div class="container">
+
+      <a class="read-more" href="#contact">Quero fazer parte (:</a>
+      
+    </div>
+  </section>
+  <!-- End call to action Section -->
+
 
   {% if testemonials %}
   <!-- ======= Testimonials Section ======= -->
@@ -344,7 +354,7 @@
 
             <div class="row">
               <div class="form-group text-center">
-                <small><b>Se você gostou do projeto, deixe seu contato para saber quando ele for iniciado</b></small>
+                <small style="color: #FF0085!important;"><b>Se você gostou do projeto, deixe seu contato para saber quando ele for iniciado</b></small>
               </div>
               <div class="col form-group mt-3">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Nome completo" required>
